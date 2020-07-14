@@ -1,0 +1,62 @@
+{% extends 'sablon.html' %}
+{% block content %}
+{% load static %} 
+<br>
+<br>
+<br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+
+            <img src="{% static 'images/banner1.png' %}" alt="VVTY" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Video Veritabanı Yönetim Sistemi Modeli
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h4>Veri Tipleri</h4>
+        <p>
+            Günümüzdeki veritabanı yönetim sistemlerinde geleneksel veritabanı yönetim sistemlerindeki ilkel veri türlerine (sayısal, metinsel v.b.) ek olarak birçok farklı veri artık yoğun olarak saklanmaktadır. Bu veriler içerisinde en çok kullanılan metin, ses, resim, grafik, video v.b. veri türlerini içerir. Bu veri türlerine genel olarak çoklu ortam verileri denilmektedir.
+        </p>
+    </div>
+    <div class="col-md-2">
+        <h4>Model Etmenleri :</h4>
+        <ul>
+            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Video Özet Bilgisi</a></li>
+            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Özellik Çıkarıcı</a></li>
+            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Olay Çıkarıcı</a></li>
+            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Sorgu Çıkarıcı</a></li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h4>Sistemin Çalışması</h4>
+        <ul>
+            Özellik ve olay çıkarımını gerçekleştirmek için öncelikle videoların anahtar karelerinin tespit edilmesi gerekmektedir. Anahtar kareler tespit edildikten sonra videolar sahnelerine ve çekimlerine ayrılır. Bu sahne ve çekimler üzerinde, ayrıca istenirse her 12 çerçeve atımında videolar parçalanır. Parçalara ayrılan videoların bu parçaları üzerinde Özellik ve Olay çıkarma işlemleri gerçekleştirilerek elde edilen bilgiler ilişkisel veritabanında saklanır. Özellik ve olay çıkarma işlemi çıkarma işlemi sisteme eklenen her özellik ve olay çıkarıcı video parçaları üzerinde tek tek çalışarak ayrı ayrı çıkarım işlemini gerçekleştirir. Sisteme yeni bir özellik veya olay çıkarıcı eklendiğinde yine her parça üzerinde tekrar tek tek çalışarak bilgi çıkarma işlemi sağlanır.
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h4>Sorgu Çıkarımı</h4>
+        <ul>
+            Bilgi çıkarım işlemi gerçekleştirildikten sonra ilişkisel veritabanında saklanan bilgiler soru çıkarıcı etmen tarafından kullanılarak kullanıcının istediği sorgular cevaplandırılır. Sorgu cevabı oluşturulurken faklı özellik çıkarıcıların verdiği ortak cevaplar birleştirilerek kullanıcı sorgusuna cevap oluşturulur. Sorgu sonucu olarak geri alma sisteminin bulunduğu sorgu çıkarıcı etmen olay, özellik, temel bilgiler ve elle yapılan indekslemeleri kural tabanlı olarak en iyi sonucu verecek şekilde birleştirir.
+        </ul>
+    </div>
+</div>
+{% endblock %}

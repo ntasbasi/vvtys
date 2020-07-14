@@ -1,0 +1,33 @@
+{% extends 'sablon.html' %}
+{% load static %} 
+{% block content %}
+<br>
+<br>
+<br>
+<form method="post" enctype="multipart/form-data" action="/videoAnahtarEkle/">
+    {% csrf_token %}
+    {% for v in result %}
+    <div class="row">
+            Video işleme Anahtar Kayıt Sayfası<br />
+            <video width="320" height="240" controls id="video">
+                <source src="{% static v.videoName %}">
+            </video>
+    </div>
+            {{v.videoName}}<br />
+            {{v.id}}<br />
+            {{v.keyValue}}<br />
+    <input type="text" id="anahtarlar" />
+    <input type="hidden" name="videoName" value={{v.videoName}} />
+    <input type="hidden" name="videoID" value={{v.id}} />
+    <input type="hidden" name="keyValue" value={{v.keyValue}} />
+    <input type="hidden" name="degerler" id="degerler" />
+    <input type="button" onclick="calistir()" value="Çalıştır">
+    <input type="button" onclick="durdur()" value="Durdur">
+    <input type="button" onclick="goster()" value="Göster">
+    <input type="submit" value="Kaydet" class="btn btn-default" />
+    {% endfor %}
+
+<script src="{% static 'js/jsdosyalarim.js' %}"></script>
+
+</form>
+{% endblock %}

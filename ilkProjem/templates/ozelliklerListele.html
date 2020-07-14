@@ -1,0 +1,35 @@
+{% extends 'sablon.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Anahtarlar</th>
+      <th>Süre</th>
+      <th>Video Id</th>
+      <th>VideoAdı</th>
+      <th>Özellik Tip Adı</th>
+      <th colspan=2>İşlemler</th>
+   </tr>
+  </thead>
+  {% for at in result %}
+   <tr>
+      <td>{{ at.id }}</td>
+      <td>{{ at.att }}</td>
+      <td>{{ at.sure }}</td>
+      <td>{{ at.videoID.id }}</td>
+      <td>{{ at.videoID.videoName }}</td>
+      <td>{{ at.attTypeID.attTypeName }}</td>
+      <td>
+        <a href="/videoAnahtarDuzenle/{{ at.id }}">Duzenle</a>
+      </td>
+      <td>
+       <a href="/videoAnahtarSil/{{ at.id }}">Sil</a>
+      </td>
+   </tr>
+   {% endfor %}
+ </table>
+ {% endblock %}

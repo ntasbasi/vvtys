@@ -1,0 +1,12 @@
+{% extends 'sablon.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+  {% for a in result %}
+    {% for b in a %}
+    {{ b }}
+    <br>
+   {% endfor %}
+   {% endfor %}
+ {% endblock %}

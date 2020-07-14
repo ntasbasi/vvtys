@@ -1,0 +1,27 @@
+{% extends 'sablon.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+Düzenleme Sayfası
+<form method="post" action="/attTypeDuzenleme/">
+    {% csrf_token %}
+ <table border="1">
+ {% for a in result %}
+  <tr>
+    <td>Özellik Tipi İsmi:</td>
+    <td>
+     <input type="text" name="attTypeName" value={{a.attTypeName}} />
+     <input type="hidden" name="attTypeId" value={{a.id}} />
+	</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>
+          <button>Kaydet</button>
+      </td>
+  </tr>
+  {% endfor %}
+ </table>
+</form>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% load static %} 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Anasayfa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/"  class="navbar-brand">VVTYS</a>
+            </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Anasayfa</a></li>
+                    <li><a href="/hakkimizda">Hakkımızda</a></li>
+                    <li><a href="/iletisim">İletişim</a></li>
+                    <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Video İşlemleri<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                      <li><a href="/ekle">Video Ekle</a></li>
+                      <li><a href="/listele">Video Listele</a></li>
+                      <li><a href="/ozelliklerListele">Video Özellik Listele</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Denemeler<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                      <li><a href="/resimEkle">Resim Yüz Tesbiti İşlemleri</a></li>
+                      <li><a href="/sVideoEkle">Video Sahne Tesbiti</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Özellik Tipleri<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                      <li><a href="/attTypePage">Özellik Tipi Ekle</a></li>
+                      <li><a href="/attTypeListele">Özellik Tipi Listele</a></li>
+                      </ul>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+
+{% block content %}
+{% endblock %}
+
+
+</body>
+</html>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'sablon.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+   </tr>
+  </thead>
+  {% for a in result %}
+   <tr>
+      <td>{{ a }}</td>
+   </tr>
+   {% endfor %}
+ </table>
+ {% endblock %}

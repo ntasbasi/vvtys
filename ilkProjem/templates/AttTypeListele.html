@@ -1,0 +1,27 @@
+{% extends 'sablon.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Özellik Tip İsmi</th>
+      <th colspan=2>İşlemler</th>
+   </tr>
+  </thead>
+  {% for a in result %}
+   <tr>
+      <td>{{ a.id }}</td>
+      <td>{{ a.attTypeName }}</td>
+      <td>
+        <a href="/attTypeDuzenle/{{ a.id }}">Duzenle</a>
+      </td>
+      <td>
+       <a href="/attTypeSil/{{ a.id }}">Sil</a>
+      </td>
+   </tr>
+   {% endfor %}
+ </table>
+ {% endblock %}

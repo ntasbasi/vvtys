@@ -1,0 +1,31 @@
+{% extends 'sablon.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Video İsmi</th>
+      <th>Oluşturma Tarihi</th>
+      <th>Anahtarlar</th>
+      <th colspan=2>İşlemler</th>
+   </tr>
+  </thead>
+  {% for v in result %}
+   <tr>
+      <td>{{ v.id }}</td>
+      <td>{{ v.videoName }}</td>
+      <td>{{ v.oTarihi }}</td>
+      <td>{{ v.keyValue }}</td>
+      <td>
+        <a href="/ekleDevam/{{ v.id }}">Duzenle</a>
+      </td>
+      <td>
+       <a href="/videoSil/{{ v.id }}">Sil</a>
+      </td>
+   </tr>
+   {% endfor %}
+ </table>
+ {% endblock %}
